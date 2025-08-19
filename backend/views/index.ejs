@@ -1,11 +1,444 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/backend/public/stylesheets/style.css">
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinterest Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .login-modal {
+            background: white;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 484px;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #767676;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            color: #333;
+        }
+
+        .notification {
+            background: #e3f2fd;
+            border: 1px solid #bbdefb;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin: 24px 24px 0 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: #1565c0;
+            font-size: 14px;
+        }
+
+        .info-icon {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #1565c0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .login-content {
+            padding: 40px 24px 24px;
+            text-align: center;
+        }
+
+        .pinterest-logo {
+            width: 40px;
+            height: 40px;
+            background: #e60023;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .welcome-text {
+            font-size: 32px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 32px;
+            line-height: 1.2;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .input-container {
+            position: relative;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 16px 48px 16px 16px;
+            border: 2px solid #cdcdcd;
+            border-radius: 16px;
+            font-size: 16px;
+            background: #fff;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #0074d9;
+        }
+
+        .input-icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #767676;
+            cursor: pointer;
+        }
+
+        .forgot-password {
+            text-align: left;
+            margin: 8px 0 24px 0;
+        }
+
+        .forgot-password a {
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 16px;
+            background: #e60023;
+            color: white;
+            border: none;
+            border-radius: 24px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            margin-bottom: 16px;
+        }
+
+        .login-btn:hover {
+            background: #d50621;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 20px 0;
+            color: #767676;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .social-btn {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid #cdcdcd;
+            border-radius: 24px;
+            background: white;
+            color: #333;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            transition: background 0.2s ease;
+        }
+
+        .social-btn:hover {
+            background: #f5f5f5;
+        }
+
+        .google-icon {
+            width: 20px;
+            height: 20px;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIwIDEwLjIyNzNDMjAgOS41MTgyIDE5LjkzNjQgOC44MzY0IDE5LjgxODIgOC4xODE4MkgxMC4yMjczVjEyLjA1SDEzLjYzNjRDMTMuMjA0NSAxNC4zIDEzLjE4MTggMTQuMjA5MSAxMS4yIDEzLjM5MDlMMTEuMTc3MyAxNS44MTgyTDE0LjEzNjQgMTcuMjM2NEMxNS43MjczIDE1Ljc3MjcgMTYuNjgxOCAxMy42MzY0IDE2LjY4MTggMTAuNzI3M0MxNi42ODE4IDEwLjExMzYgMTYuNjE4MiA5LjUyMjczIDE2LjUgOC45NTQ1NUgxMC4yMjczVjEyLjk1NDVIMTQUODE5MUMxNC45MDkxIDkuOTU0NTUgMTMuMjI3MyA3LjM4NjM2IDEwLjk3NzMgNy4yVjEwLjc3MjdIOC4yOVY3LjJDNi41MzE4MiA1LjQ1NDU1IDQuMDkwOTEgNC4zNDA5MSAwIDQuMzQwOTFWNy44NzUwOEM0LjE4MTgyIDcuODc1MDggNi41IDEwLjEgNi41IDEzSDEwLjIyNzNWMTQuMzYzNkMxMS44ODE4IDE0LjM2MzYgMTMuMzY4MiAxMy4zODY0IDE0LjE4MTggMTEuODI3M0MxNC4yODQxIDExLjU4NCAxNC4zNDA5IDExLjMzNjQgMTQuMzQwOSAxMS4wNzk1SDE0LjMxODJWMTAuMjI3M0gxNFoiIGZpbGw9IiM0Mjg1RjQiLz4KPHA9InRoOTkgNi4xMTM2NEM4Ljk5OTk5IDYuMzQwOTEgOC44NDA5MSA2LjYwOTE0IDguNjM2MzYgNi43OTU0NUM5LjA4MTgyIDcuMDQ1NDUgOS41OTA5MSA3LjE5MDkxIDEwLjEzNjQgNy4xOTA5MUMxMS4zMTgyIDcuMTkwOTEgMTIuNDA5MSA2Ljc5MDkxIDEzLjIyNzMgNi4wNDU0NUwxMS40OTk5IDguMTU5MDlDMTAuODQwOSA4LjY3MjczIDEwLjA0NTUgOSA5LjE4MTgyIDlDNy43NzI3MyA5IDYuNTQ1NDUgNy45MTM2NCA2LjA5MDkxIDYuNTY4MThDNS45NTQ1NSA2LjMgNS44ODYzNiA2IDUuODg2MzYgNS42ODE4MlY0LjMxODE4QzYuNjEzNjQgMi45MDkwOSA4LjE4MTgyIDEuOTE4MTggMTAuMTM2NCAxLjkxODE4QzEyIDEuOTE4MTggMTMuNTY4MiAyLjcgMTQuNjU5MSAzLjkxMzY0TDE2LjYzNjQgMi4yNzI3M0MxNS4wMjI3IDAuODg2MzY0IDEyLjc3MjcgMCA5LjE4MTgyIDBDNC4xMzYzNiAwIDAuMjI3MjczIDMuNDMxODIgMC4yMjcyNzMgNy45NTQ1NUM2LjUgMTEuODYzNiA5LjE4MTgyIDEyIDEwLjEzNjQgMTJDMTEuNzI3MyAxMiAxMi45NTQ1IDExLjUgMTQuMDQ1NSAxMC41OTE0QzE0Ljc5NTUgMTAuMDkwOSAxNS4zNDA5IDkuNDA5MDkgMTUuNTQ1NSA4LjYzNjM2VjEwLjk1NDVIMTQuNjgxOFYxMy4zMTgySDEzLjA5MDlWMTUuMjI3M0gxOFY3LjYzNjM2SDE2LjEzNjRWOS45OTk5OUgxNC4yMjczVjguMTgxODJIMTZWMTAuMjI3M1oiIGZpbGw9IiMzNDc0M0UiLz4KPC9zdmc+') no-repeat center;
+            background-size: contain;
+        }
+
+        .qr-icon {
+            width: 20px;
+            height: 20px;
+            background: #333;
+            border: 1px solid #333;
+            display: inline-block;
+            position: relative;
+        }
+
+        .qr-icon::before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .terms-text {
+            font-size: 12px;
+            color: #767676;
+            text-align: center;
+            margin: 20px 0;
+            line-height: 1.4;
+        }
+
+        .terms-text a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .terms-text a:hover {
+            text-decoration: underline;
+        }
+
+        .signup-section {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #efefef;
+        }
+
+        .signup-section a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .signup-section a:hover {
+            text-decoration: underline;
+        }
+
+        .business-section {
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        .business-section a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .business-section a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal-overlay">
+        <div class="login-modal">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            
+            <div class="notification">
+                <div class="info-icon">i</div>
+                <div>
+                    Facebook login is no longer available. Log in with an option below or <strong>tap to recover your account</strong>
+                </div>
+            </div>
+
+            <div class="login-content">
+                <div class="pinterest-logo">P</div>
+                
+                <h1 class="welcome-text">Welcome to<br>Pinterest</h1>
+
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <div class="input-container">
+                            <input type="email" class="form-input" placeholder="Email" required>
+                            <span class="input-icon">📧</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <div class="input-container">
+                            <input type="password" class="form-input" placeholder="Password" required>
+                            <span class="input-icon" onclick="togglePassword()">👁</span>
+                        </div>
+                    </div>
+
+                    <div class="forgot-password">
+                        <a href="#" onclick="forgotPassword()">Forgot your password?</a>
+                    </div>
+
+                    <button type="submit" class="login-btn">Log in</button>
+                </form>
+
+                <div class="divider">OR</div>
+
+                <button class="social-btn" onclick="googleLogin()">
+                    <div class="google-icon"></div>
+                    Continue with Google
+                </button>
+
+                <button class="social-btn" onclick="qrLogin()">
+                    <div class="qr-icon"></div>
+                    Use QR code
+                </button>
+
+                <div class="terms-text">
+                    By continuing, you agree to Pinterest's <a href="#">Terms of Service</a> and acknowledge you've read our <a href="#">Privacy Policy</a>. Notice at collection.
+                </div>
+
+                <div class="signup-section">
+                    <span>Not on Pinterest yet? <a href="#" onclick="signUp()">Sign up</a></span>
+                </div>
+
+                <div class="business-section">
+                    <span>Are you a business? <a href="#" onclick="businessSignup()">Get started here!</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function closeModal() {
+            alert('Close button clicked!');
+        }
+
+        function togglePassword() {
+            const passwordInput = document.querySelector('input[type="password"], input[type="text"]');
+            const icon = event.target;
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.textContent = '🙈';
+            } else {
+                passwordInput.type = 'password';
+                icon.textContent = '👁';
+            }
+        }
+
+        function forgotPassword() {
+            alert('Forgot password clicked!');
+        }
+
+        function googleLogin() {
+            alert('Continue with Google clicked!');
+        }
+
+        function qrLogin() {
+            alert('Use QR code clicked!');
+        }
+
+        function signUp() {
+            alert('Sign up clicked!');
+        }
+
+        function businessSignup() {
+            alert('Get started here clicked!');
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.querySelector('input[type="email"]').value;
+            const password = document.querySelector('input[type="password"], input[type="text"]').value;
+            
+            if (email && password) {
+                alert(`Login attempt with email: ${email}`);
+            }
+        });
+
+        // Add some interactive effects
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentNode.style.transform = 'scale(1.02)';
+                this.parentNode.style.transition = 'transform 0.2s ease';
+            });
+
+            input.addEventListener('blur', function() {
+                this.parentNode.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
+</body>
 </html>
