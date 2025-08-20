@@ -34,6 +34,7 @@
             max-width: 484px;
             position: relative;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            /* margin: 5%; */
         }
 
         .close-btn {
@@ -87,6 +88,7 @@
             padding: 40px 24px 24px;
             text-align: center;
             max-height: 80%;
+
         }
 
         .pinterest-logo {
@@ -135,7 +137,7 @@
             padding: 16px 48px 16px 16px;
             border: 2px solid #cdcdcd;
             border-radius: 16px;
-            font-size: 16px;
+            font-size: 1.3rem;
             background: #fff;
             transition: border-color 0.2s ease;
         }
@@ -157,13 +159,15 @@
         .forgot-password {
             text-align: left;
             margin: 8px 0 24px 0;
+            
         }
-
+        
         .forgot-password a {
             color: #333;
             text-decoration: none;
             font-size: 14px;
             font-weight: 600;
+            font-size: 1.1rem;
         }
 
         .forgot-password a:hover {
@@ -177,7 +181,7 @@
             color: white;
             border: none;
             border-radius: 24px;
-            font-size: 16px;
+            font-size: 1.4rem;
             font-weight: 600;
             cursor: pointer;
             transition: background 0.2s ease;
@@ -221,7 +225,7 @@
         .google-icon {
             width: 20px;
             height: 20px;
-            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIwIDEwLjIyNzNDMjAgOS41MTgyIDE5LjkzNjQgOC44MzY0IDE5LjgxODIgOC4xODE4MkgxMC4yMjczVjEyLjA1SDEzLjYzNjRDMTMuMjA0NSAxNC4zIDEzLjE4MTggMTQuMjA5MSAxMS4yIDEzLjM5MDlMMTEuMTc3MyAxNS44MTgyTDE0LjEzNjQgMTcuMjM2NEMxNS43MjczIDE1Ljc3MjcgMTYuNjgxOCAxMy42MzY0IDE2LjY4MTggMTAuNzI3M0MxNi42ODE4IDEwLjExMzYgMTYuNjE4MiA5LjUyMjczIDE2LjUgOC45NTQ1NUgxMC4yMjczVjEyLjk1NDVIMTQUODE5MUMxNC45MDkxIDkuOTU0NTUgMTMuMjI3MyA3LjM4NjM2IDEwLjk3NzMgNy4yVjEwLjc3MjdIOC4yOVY3LjJDNi41MzE4MiA1LjQ1NDU1IDQuMDkwOTEgNC4zNDA5MSAwIDQuMzQwOTFWNy44NzUwOEM0LjE4MTgyIDcuODc1MDggNi41IDEwLjEgNi41IDEzSDEwLjIyNzNWMTQuMzYzNkMxMS44ODE4IDE0LjM2MzYgMTMuMzY4MiAxMy4zODY0IDE0LjE4MTggMTEuODI3M0MxNC4yODQxIDExLjU4NCAxNC4zNDA5IDExLjMzNjQgMTQuMzQwOSAxMS4wNzk1SDE0LjMxODJWMTAuMjI3M0gxNFoiIGZpbGw9IiM0Mjg1RjQiLz4KPHA9InRoOTkgNi4xMTM2NEM4Ljk5OTk5IDYuMzQwOTEgOC44NDA5MSA2LjYwOTE0IDguNjM2MzYgNi43OTU0NUM5LjA4MTgyIDcuMDQ1NDUgOS41OTA5MSA3LjE5MDkxIDEwLjEzNjQgNy4xOTA5MUMxMS4zMTgyIDcuMTkwOTEgMTIuNDA5MSA2Ljc5MDkxIDEzLjIyNzMgNi4wNDU0NUwxMS40OTk5IDguMTU5MDlDMTAuODQwOSA4LjY3MjczIDEwLjA0NTUgOSA5LjE4MTgyIDlDNy43NzI3MyA5IDYuNTQ1NDUgNy45MTM2NCA2LjA5MDkxIDYuNTY4MThDNS45NTQ1NSA2LjMgNS44ODYzNiA2IDUuODg2MzYgNS42ODE4MlY0LjMxODE4QzYuNjEzNjQgMi45MDkwOSA4LjE4MTgyIDEuOTE4MTggMTAuMTM2NCAxLjkxODE4QzEyIDEuOTE4MTggMTMuNTY4MiAyLjcgMTQuNjU5MSAzLjkxMzY0TDE2LjYzNjQgMi4yNzI3M0MxNS4wMjI3IDAuODg2MzY0IDEyLjc3MjcgMCA5LjE4MTgyIDBDNC4xMzYzNiAwIDAuMjI3MjczIDMuNDMxODIgMC4yMjcyNzMgNy45NTQ1NUM2LjUgMTEuODYzNiA5LjE4MTgyIDEyIDEwLjEzNjQgMTJDMTEuNzI3MyAxMiAxMi45NTQ1IDExLjUgMTQuMDQ1NSAxMC41OTE0QzE0Ljc5NTUgMTAuMDkwOSAxNS4zNDA5IDkuNDA5MDkgMTUuNTQ1NSA4LjYzNjM2VjEwLjk1NDVIMTQuNjgxOFYxMy4zMTgySDEzLjA5MDlWMTUuMjI3M0gxOFY3LjYzNjM2SDE2LjEzNjRWOS45OTk5OUgxNC4yMjczVjguMTgxODJIMTZWMTAuMjI3M1oiIGZpbGw9IiMzNDc0M0UiLz4KPC9zdmc+') no-repeat center;
+            background: url('/images/google_g_icon.png');
             background-size: contain;
         }
 
