@@ -10,11 +10,15 @@ passport.use(new localStrategy(userModel.authenticate()));
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index');
+});
+
+router.get('/login', function (req, res, next) {
+  res.render('login');
 });
 
 router.get('/profile', isLoggedIn, function(req,res){
-  res.send("Welcome to your profile page");
+  res.render("profile");
 });
 
 router.post('/register', function(req, res){
@@ -34,13 +38,17 @@ router.post('/login', passport.authenticate('local', {
   failureRedirect:'/'
 }))
 
-router.post('/logout', function(req, res, next){
+router.get('/logout', function(req, res, next){
   req.logout(function(err) {
     if (err) { return next(err); }
     res.redirect('/');
   });
 
   
+});
+
+router.get('/feed', function (req, res, next) {
+  res.render('feed');
 });
 
 function isLoggedIn(req,res,next){

@@ -11,21 +11,21 @@
 <body>
     <div class="modal-overlay">
         <div class="login-modal">
+            <!-- <button class="close-btn" onclick="closeModal()">&times;</button> -->
+
+            <!-- <div class="notification">
+                <div class="info-icon">i</div>
+                <div>
+                    Facebook login is no longer available. Log in with an option below or <strong>tap to recover your account</strong>
+                </div>
+            </div> -->
 
             <div class="login-content">
                 <img src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png" alt="pin logo" class="pinterest-logo" />
 
-                <h1 class="welcome-text">Welcome to<br>Pinterest</h1>
+                <h1 class="welcome-text">Login to your account</h1>
 
-                <form id="loginForm" action="/register" method="post">
-                    <div class="form-group">
-                        <!-- <label class="form-label">Email</label> -->
-                        <div class="input-container">
-                            <input type="email" class="form-input" placeholder="Email" name="email" required>
-                            <!-- <span class="input-icon">📧</span> -->
-                        </div>
-                    </div>
-
+                <form id="loginForm" action="/login" method="post">
                     <div class="form-group">
                         <div class="input-container">
                             <input type="username" class="form-input" placeholder="Username" name="username" required>
@@ -33,16 +33,9 @@
                     </div>
 
                     <div class="form-group">
-                        <!-- <label class="form-label">Password</label> -->
                         <div class="input-container">
                             <input type="password" class="form-input" placeholder="Password" name="password" required>
                             <span class="input-icon" onclick="togglePassword()">👁</span>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="input-container">
-                            <input type="fullname" class="form-input" placeholder="Full Name" name="fullname" required>
                         </div>
                     </div>
 
@@ -51,7 +44,7 @@
                         <a href="/forgot" onclick="forgotPassword()">Forgot your password?</a>
                     </div>
 
-                    <button type="submit" class="login-btn">Register</button>
+                    <button type="submit" class="login-btn">Login</button>
                 </form>
 
                 <div class="divider">OR</div>
@@ -72,7 +65,7 @@
                 </div>
 
                 <div class="signup-section">
-                    <span>Already on Pinterest? <a href="/login" onclick="signUp()">Sign in</a></span>
+                    <span>Not on Pinterest yet? <a href="/" onclick="signUp()">Sign up</a></span>
                 </div>
 
                 <div class="business-section">
@@ -99,7 +92,6 @@
                 icon.textContent = '👁';
             }
         }
-
     </script>
 </body>
 
