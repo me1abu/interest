@@ -11,19 +11,14 @@
 <body>
     <div class="modal-overlay">
         <div class="login-modal">
-            <!-- <button class="close-btn" onclick="closeModal()">&times;</button> -->
-
-            <!-- <div class="notification">
-                <div class="info-icon">i</div>
-                <div>
-                    Facebook login is no longer available. Log in with an option below or <strong>tap to recover your account</strong>
-                </div>
-            </div> -->
 
             <div class="login-content">
                 <img src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png" alt="pin logo" class="pinterest-logo" />
 
                 <h1 class="welcome-text">Login to your account</h1>
+                <% if (error.length > 0) { %>
+                    <p style="font-weight: bold; margin-bottom: 5px; color: red;"><%= error %></p>
+                    <% } %>
 
                 <form id="loginForm" action="/login" method="post">
                     <div class="form-group">

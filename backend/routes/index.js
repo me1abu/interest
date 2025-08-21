@@ -14,7 +14,9 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/login', function (req, res, next) {
-  res.render('login');
+  // console.log(req.flash("error"));
+  res.render('login', {error: req.flash("error")});
+
 });
 
 router.get('/profile', isLoggedIn, function(req,res){
@@ -35,7 +37,8 @@ router.post('/register', function(req, res){
 
 router.post('/login', passport.authenticate('local', {
   successRedirect:'/profile',
-  failureRedirect:'/'
+  failureRedirect:'/login',
+  failureFlash: true,
 }))
 
 router.get('/logout', function(req, res, next){
