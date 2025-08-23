@@ -179,3 +179,35 @@ body {
   opacity: 1;
   color: #45f3ff;
 }
+
+.card .content .details .logoutbtn {
+  display: flex;
+  justify-content: center;
+  /* gap: 20px; */
+  padding: 1rem 0;
+
+}
+.card .content .details .logoutbtn .button {
+  padding: 10px 30px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: 500;
+  background: #ff4545;
+  color: #222;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.card .content .logoutbtn a:hover {
+  transform: scale(1.1);
+  opacity: 1;
+  color: #f71616;
+}
+
+/* .card .content .details .upload{
+  margin: 1rem 0;
+} */
