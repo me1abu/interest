@@ -4,46 +4,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Varepi - Profile</title>
   <link rel="stylesheet" href="/stylesheets/profile.css">
+
 </head>
 
 <body>
-  <div class="card">
-    <div class="lines"></div>
-    <div class="imgBx">
-      <img src="https://i.pravatar.cc/150?u=123" alt="profile">
+  <div class="profile-container">
+    <!-- Profile Avatar -->
+    <div class="profile-avatar">
+      V
     </div>
-    <div class="content">
-      <div class="details">
-        <h2>Alex Johnson<br><span>Senior Developer</span></h2>
-        <div class="data">
-          <h3>342<br><span>Posts</span></h3>
-          <h3>120k<br><span>Followers</span></h3>
-          <h3>285<br><span>Following</span></h3>
-        </div>
-        <div class="actionBtn">
-          <button>Follow</button>
-          <button>Message</button>
-        </div>
-        <div class="logoutbtn">
-          <a href="/logout" class="button">Logout</a>
-        </div>
 
-        <div class="upload">
-          <form action="/upload" method="post" enctype="multipart/form-data">
-            <input type="file" name="file">
-            <button type="submit">Upload</button>
-          </form>
-        </div>
+    <!-- Profile Info -->
+    <h1 class="profile-name">
+      Varepi
+      <!-- <svg class="lock-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z" />
+      </svg> -->
+    </h1>
 
-      </div>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      </div>
+    <div class="profile-handle">
+      <img src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png" alt="pin logo"
+        class="pinterest-logo" />
+      <span>varepi4635</span>
+    </div>
+
+    <div class="profile-stats">
+      0 following
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="profile-actions">
+      <button class="btn btn-share">Share</button>
+      <button class="btn btn-edit">Edit profile</button>
+      <button class="btn btn-follow"><a href="/logout">Logout</a></button>
+    </div>
+
+    <!-- upload image -->
+    <div class="upload">
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit" class="btn">Upload</button>
+      </form>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content-area">
+      <!-- This is where pins/boards would be displayed -->
     </div>
   </div>
 </body>
