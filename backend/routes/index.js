@@ -25,8 +25,9 @@ router.get('/profile', isLoggedIn, async function(req,res){
     username: req.session.passport.user
 
   })
-  .populate("posts")
-  res.render("profile", {user});
+  .populate("posts");
+  console.log(user);
+  res.render("profile",{user});
 });
 
 router.post('/upload', isLoggedIn, upload.single('file'), async function(req, res, next){

@@ -12,7 +12,7 @@
         }
 
         .profile-container {
-          max-width: 800px;
+          max-width: 80%;
           margin: 0 auto;
           padding: 40px 20px;
           text-align: center;
@@ -188,7 +188,7 @@
           color: #f71616;
         }
 
-        .upload{
+        .upload {
           color: white;
           padding: 10px 20px;
           border: none;
@@ -196,16 +196,61 @@
           margin-bottom: 1.2rem;
           /* width: 500px; */
           background-color: #030303;
-          }
-          
-          .pinterest-logo {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            background: #ffffff;
-            border-radius: 50%;
-            /* margin: 0 auto 24px; */
-            color: rgb(108, 107, 107);
-            font-weight: bold;
-            font-size: 18px;
+        }
+
+        .pinterest-logo {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background: #ffffff;
+          border-radius: 50%;
+          /* margin: 0 auto 24px; */
+          color: rgb(108, 107, 107);
+          font-weight: bold;
+          font-size: 18px;
+        }
+
+        /* uploaded posts */
+
+        .cards {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          margin-top: 30px;
+          align-items: start;
+        }
+
+        .image-card {
+          width: 300px;
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          background-color: #fff;
+          transition: transform 0.3s ease;
+        }
+
+        .image-card:hover {
+          transform: scale(1.03);
+        }
+
+        .image-card img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        .card-content {
+          padding: 15px;
+        }
+
+        .card-content h3 {
+          margin: 0 0 10px;
+          font-size: 1.2rem;
+          color: #333;
+        }
+
+        .card-content p {
+          margin: 0;
+          font-size: 0.95rem;
+          color: #666;
         }
