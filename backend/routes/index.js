@@ -43,7 +43,7 @@ router.post('/upload', isLoggedIn, upload.single('file'), async function(req, re
   })
   user.posts.push(post._id);
   await user.save();
-  res.send("ho gaya");
+  res.redirect("/profile");
 
 });
 
