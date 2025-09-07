@@ -2,9 +2,11 @@
 <%- include('./partials/header') %>
 
   <div class="w-full bg-zinc-100 flex justify-center items-center h-screen">
-    <div class=" bg-white rounded-2xl flex flex-col justify-center items-center">
+    <div class="w-[23vw] h-[60vh] bg-white rounded-2xl flex flex-col justify-center items-center box-border">
+    <!-- <div class=" bg-white rounded-2xl box-border"> -->
       <div class="logo">P</div>
       <div class="text">Welcome to Pinterest</div>
+      <form action="">
       <div class="email">
         <p>Email</p>
         <input type="email" name="email" placeholder="Email">
@@ -27,12 +29,13 @@
           <p>Use QR Code</p>
         </div>
       </div>
-      <div class="para">
-        <p>By continuing you agree Pinterest</p>
+      <div class="text-wrap">
+        <p class="text-wrap">By continuing you agree to Pinterest terms and conditions</p>
       </div>
       <div class="signup">
         <p>Don't have an account? <span>Sign up</span></p>
       </div>
+      </form>
     </div>
 
   </div>
