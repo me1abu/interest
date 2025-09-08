@@ -3,9 +3,11 @@
 
   <div class="w-full bg-zinc-100 flex justify-center items-center h-screen">
     <!-- <div class="w-[23vw] h-[60vh] bg-white rounded-2xl flex flex-col justify-center items-center box-border"> -->
-    <div class="w-[23vw] h-[60vh] text-center bg-white rounded-2xl box-border p-10">
-      <div class="logo">P</div>
-      <div class="font-bold text-2xl text-gray-800 ">Welcome to Pinterest</div>
+    <div class="w-[23vw] h-[80vh] text-center bg-white rounded-2xl box-border p-10">
+      <div class="w-full flex justify-center mb-4">
+        <img src="/images/pinterestLogo.png" alt="" width="40px" height="40px">
+      </div>
+      <div class="font-bold text-2xl text-gray-800 mb-4">Welcome to Pinterest</div>
       <form action="">
       <div class="flex flex-col items-start m-1 ">
         <p class="ml-2 text">Email</p>
@@ -17,28 +19,31 @@
       </div>
       <div class="flex items-start m-1">
         <a href="
-          #"><p class="text-blue-600 font-semibold hover:underline">Forgot your password</p></a>
+          #"><p class="text-blue-600 font-semibold hover:underline text-[0.88rem]">Forgot your password?</p></a>
       </div>
-      <div class="w-full border rounded-xl p-1 bg-red-600 text-white">
+      <div class="w-full border rounded-xl p-1 bg-red-600 text-white mt-2">
         <button>Log in</button>
       </div>
-      <div class="or">
+
+      <div class="mt-2 font-bold">
         <p>OR</p>
       </div>
 
       <div class="flex flex-col items-start m-1">
-        <div class="w-full h-9 border rounded-md flex justify-center items-center">
+        <div class="w-full h-9 border rounded-md flex justify-center items-center gap-2 mt-2">
+          <img src="/images/google_logo.jpg" alt="" width="20px" height="20px">
           <p>Continue with Google</p>
         </div>
-        <div class="qr-login">
+        <div class="w-full h-9 border rounded-md flex justify-center items-center gap-2 mt-2">
+          <img src="/images/qr_logo.png" alt="" width="20px" height="20px">
           <p>Use QR Code</p>
         </div>
       </div>
       <div class="text-xs text-wrap text-gray-500 ">
-        <p class="text-wrap">By continuing you agree to Pinterest terms and conditions</p>
+        <p class="text-wrap">By continuing, you agree to Pinterest's <a href="#" class="hover:underline">Terms and Conditions</a></p>
       </div>
-      <div class="signup">
-        <p>Don't have an account? <span>Sign up</span></p>
+      <div class="mt-2">
+        <a href="#"><p class="text-[0.80rem] font-semibold">Not on Pinterest yet? <span>Sign up</span></p></a>
       </div>
       </form>
     </div>
