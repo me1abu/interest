@@ -6,10 +6,22 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const passport = require('passport');
+const expressSession= require('express-session');
 
 var app = express();
 
 app.use(express.static('pin/public'));
+
+app.use(expressSession({
+  resave: false,
+  saveUninitializes: false,
+  secret: "chacha bhatija contract company"
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.serializeUser(usersRouter.serializeUser());
+passport.deserializeUser(usersRouter.deserializeUser());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
