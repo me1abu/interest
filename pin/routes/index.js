@@ -15,6 +15,10 @@ router.get('/profile', isLoggedIn, function(req, res, next){
   res.render('profile');
 })
 
+router.get('/editprofile', isLoggedIn, function(req, res, next){
+  res.render('editprofile');
+})
+
 router.get("/register", function(req, res, next){
   res.render('register');
 })

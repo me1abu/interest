@@ -1,0 +1,57 @@
+<%- include('./partials/header') %>
+    <div class="flex relative">
+
+        <div class="w-[6vw] h-screen flex flex-col justify-center items-center gap-4 border fixed top-0 left-0 pr-4">
+            <div class="mt-2"><a href=""><img src="/images/pinterestLogo.png" alt="" width="34px" height="34px"></a>
+            </div>
+            <div class="mt-6"><a href=""><img src="/images/home_icon.png" alt="" width="30px" height="30px"></a></div>
+            <div class="mt-6"><a href=""><img src="/images/compass_icon.png" alt="" width="30px" height="30px"></a>
+            </div>
+            <div class="mt-6"><a href=""><img src="/images/board_icon.png" alt="" width="30px" height="30px"></a></div>
+            <div class="mt-6"><a href=""><img src="/images/create_icon.png" alt="" width="30px" height="30px"></a></div>
+            <div class="mt-6"><a href=""><img src="/images/bell.png" alt="" width="30px" height="30px"></a></div>
+            <div class="mt-6"><a href=""><img src="/images/message_icon.png" alt="" width="30px" height="30px"></a>
+            </div>
+            <div class="mt-32"><a href=""><img src="/images/settings_wheel_icon.png" alt="" width="30px"
+                        height="30px"></a></div>
+
+        </div>
+
+        <div class="flex flex-col w-[94vw] border absolute top-0 right-0">
+            <div class="w-full h-16 border">
+                <input type="search" placeholder="Search"
+                    class="w-full h-full rounded-2xl border border-gray-400 pl-4 focus:outline-none focus:border-4 focus:border-blue-300">
+            </div>
+            <div class="w-full min-h-screen bg-white flex flex-col items-center border">
+                <div class="w-[30vw] mt-8">
+                    <h1 class="text-3xl font-bold">Edit Profile</h1>
+                    <p>Keep your personal details private. Information you add here is visible to anyone who can view
+                        your profile.</p>
+                    <div class="picupload">
+                        <img src="" alt="">
+                        <button><a href="">Upload</a></button>
+                    </div>
+                    <div class="details">
+                        <input type="firstname" name="firstname" placeholder="First Name"
+                            class="w-full h-9 border rounded-xl border-gray-400 p-3 focus:border-blue-600 focus:outline-none focus:border-2"
+                            required>
+                        <input type="lastname" name="lastname" placeholder="Last Name"
+                            class="w-full h-9 border rounded-xl border-gray-400 p-3 focus:border-blue-600 focus:outline-none focus:border-2"
+                            required>
+                        <input type="username" name="username" placeholder="Username"
+                            class="w-full h-9 border rounded-xl border-gray-400 p-3 focus:border-blue-600 focus:outline-none focus:border-2"
+                            required>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="w-full h-[10vh] fixed bottom-0 flex justify-center items-center gap-4 bg-white p-4" style="box-shadow: 0 -4px 6px -1px rgba(0,0,0,0.1)" >
+                <button class="font-semibold rounded-2xl bg-zinc-200 hover:bg-zinc-300 pl-3 pr-4 pt-3 pb-3"><a href="">Reset</a></button>
+                <button class="font-semibold rounded-2xl bg-red-500 hover:bg-red-600 pl-3 pr-4 pt-3 pb-3"><a href="">Save</a></button>
+            </div>
+        </div>
+    </div>
+    <%- include('./partials/footer') %>
