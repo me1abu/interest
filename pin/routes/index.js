@@ -3,6 +3,8 @@ var router = express.Router();
 const userModel= require('./users');
 const passport = require('passport');
 const localStrategy= require('passport-local');
+const upload= require('./multer');
+
 
 passport.use(new localStrategy({usernameField: 'email' }, userModel.authenticate()));
 
@@ -18,6 +20,13 @@ router.get('/profile', isLoggedIn, function(req, res, next){
 router.get('/editprofile', isLoggedIn, function(req, res, next){
   res.render('editprofile');
 })
+
+router.post('/fileupload', isLoggedIn, upload.single('image'), (req,res)=>{
+  if(!req.file){
+    return res.status(404).send('no files uploades');
+  }
+  res.send('file uploaded sucessfully');
+});
 
 router.get("/register", function(req, res, next){
   res.render('register');
